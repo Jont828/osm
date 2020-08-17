@@ -18,21 +18,21 @@ metadata:
     app: bookstore-v1
 
 spec:
-  maxConnections: 5
+  maxConnections: 20
 EOF
 
-echo "Apply backpressure policy for the bookstore-v2 service"
-kubectl apply -f - <<EOF
-apiVersion: policy.openservicemesh.io/v1alpha1
-kind: Backpressure
+# echo "Apply backpressure policy for the bookstore-v2 service"
+# kubectl apply -f - <<EOF
+# apiVersion: policy.openservicemesh.io/v1alpha1
+# kind: Backpressure
 
-metadata:
-  name: max-connections-connections-bookstore-v2
-  namespace: "${BOOKSTORE_NAMESPACE}"
+# metadata:
+#   name: max-connections-connections-bookstore-v2
+#   namespace: "${BOOKSTORE_NAMESPACE}"
 
-  labels:
-    app: bookstore-v2
+#   labels:
+#     app: bookstore-v2
 
-spec:
-  maxConnections: 5
-EOF
+# spec:
+#   maxConnections: 1000
+# EOF
