@@ -20,19 +20,3 @@ metadata:
 spec:
   maxConnections: 20
 EOF
-
-# echo "Apply backpressure policy for the bookstore-v2 service"
-# kubectl apply -f - <<EOF
-# apiVersion: policy.openservicemesh.io/v1alpha1
-# kind: Backpressure
-
-# metadata:
-#   name: max-connections-connections-bookstore-v2
-#   namespace: "${BOOKSTORE_NAMESPACE}"
-
-#   labels:
-#     app: bookstore-v2
-
-# spec:
-#   maxConnections: 1000
-# EOF
